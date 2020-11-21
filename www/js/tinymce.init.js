@@ -1,3 +1,4 @@
+//basePath lze vypustit
 const initTinyMceEditor = (basePath = '') => {
     tinymce.init({
         selector: 'textarea:not(.no-editor)',
@@ -24,7 +25,7 @@ const initTinyMceEditor = (basePath = '') => {
                 editor.save();
             })
 
-            editor.on('keydown', function (event) {
+            editor.on('keydown', function (event) { //tohle je aby nějak fungoval tab na odsazení
                 if (event.keyCode === 9) { // tab pressed
                     if (event.shiftKey) {
                         editor.execCommand('Outdent');
@@ -44,10 +45,11 @@ const initTinyMceEditor = (basePath = '') => {
         image_advtab: true,
         relative_urls: false,
 
+        //basePath tady bejt nemusí - jde spíš o ukázku jak případně předat proměnné z latte
         external_filemanager_path: basePath + '/../tools/filemanager/',
-        filemanager_title: 'Responsive Filemanager',
+        filemanager_title: 'Filemanager',
         external_plugins: {'filemanager': basePath + '/../tools/filemanager/plugin.min.js'},
-        filemanager_access_key: '0511b1d3-2ba0-4c00-b4d8-4a832a06c0d7'
+        filemanager_access_key: 'b18f0453-a3f4-40d5-8d42-2dec8c542693'
         /*toolbar_drawer: 'floating',*/
     });
 }
