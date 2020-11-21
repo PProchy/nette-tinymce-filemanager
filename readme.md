@@ -1,7 +1,9 @@
-# tinymce.init.js
+# Inicializace
 Do JS inicializace je potřeba dát `responsivefilemanager` a další nastavení k tomu. 
 
 ```js
+//tinymce.init.js
+
 tinymce.init({
     plugins: [
         'responsivefilemanager' /* kamkoliv do seznamu pluginů */
@@ -22,9 +24,12 @@ tinymce.init({
 })
 ```
 
+# Nastavení
 Nastavení filemanageru lze upravovat v `filemanager/config/config.php`.
 
 ```php
+//config.php
+
 $config = [
     'access_keys' => [
         'b18f0453-a3f4-40d5-8d42-2dec8c542693'
