@@ -1,0 +1,14 @@
+{block scripts}
+	{include parent}
+
+	<script src="{$basePath}/components/tinymce/tinymce.min.js"></script>
+	<script src="{$basePath}/js/tinymce.init.js"></script>
+
+	<script>initTinyMceEditor({$basePath})</script>
+{/block}
+
+
+
+{block content}
+
+{control tinyMceControl}

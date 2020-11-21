@@ -1,0 +1,33 @@
+parameters:
+
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\Modules\*\Presenters\*Presenter
+
+
+session:
+	expiration: 14 days
+
+
+di:
+	export:
+		parameters: no
+		tags: no
+
+
+services:
+	router: App\Router\RouterFactory::createRouter
+
+
+
+search:
+    components:
+        in: %appDir%/Components
+        classes:
+            - *Factory
+    forms:
+        in: %appDir%/Forms
+        classes:
+            - *Factory
